@@ -34,38 +34,32 @@ void Date::Print()const
 
 void Date::SetD(int t)
 {
-	cout << "Day = ";
-	cin >> day;
+	day=t;
 }
 
 void Date::SetM(int t)
 {
-	cout << "Month = ";
-	cin >> month;
+	month=t;
 }
 
 void Date::SetY(int t)
 {
-	cout << "Year = ";
-	cin >> year;
+	year=t;
 }
 
-void Date::GetD()
+int Date::GetD()const
 {
-	cout << "Day: " << day << endl;
+	return day;
 }
 
-void Date::GetM()
+int Date::GetM()const
 {
-	if (month < 10)
-		cout << "Month: 0" << month << endl;
-	else
-		cout << "Month: " << month << endl;
+	return month;
 }
 
-void Date::GetY()
+int Date::GetY()const
 {
-	cout << "Year: " << year << endl;
+	return year;
 }
 
 Date Date::operator+(int a)
@@ -249,150 +243,150 @@ Date Date::Kogitte(Date& temp)
 
 }
 
-Date& Date::operator+(const Date& a)
-{
-	day += a.day;
-	month += a.month;
-	year += a.year;
-	Kogitte(*this);
-	return *this;
-}
-
-Date& Date::operator-(const Date& a)
-{
-	day -= a.day;
-	month -= a.month;
-	year -= a.year;
-	Kogitte(*this);
-	return *this;
-}
-
-Date& Date::operator+=(int a)
-{
-	day += a;
-	Kogitte(*this);
-	return *this;
-}
-
-Date& Date::operator-=(int a)
-{
-	day -= a;
-	Kogitte(*this);
-	return *this;
-}
-
-bool Date::operator>(const Date& t)
-{
-	if (year > t.year)
-	{
-		return true;
-	}
-	else if (year == t.year)
-	{
-		if (month > t.month)
-		{
-			return true;
-		}
-		else if (month == t.month)
-		{
-			if (day > t.day)
-			{
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
-bool Date::operator>=(const Date& t)
-{
-	if (year > t.year)
-	{
-		return true;
-	}
-	else if (year == t.year)
-	{
-		if (month > t.month)
-		{
-			return true;
-		}
-		else if (month == t.month)
-		{
-			if (day > t.day)
-			{
-				return true;
-			}
-			else if (day == t.day)
-			{
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
-bool Date::operator<(const Date& t)
-{
-	if (year < t.year)
-	{
-		return true;
-	}
-	else if (year == t.year)
-	{
-		if (month < t.month)
-		{
-			return true;
-		}
-		else if (month == t.month)
-		{
-			if (day < t.day)
-			{
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
-bool Date::operator<=(const Date& t)
-{
-	if (year < t.year)
-	{
-		return true;
-	}
-	else if (year == t.year)
-	{
-		if (month < t.month)
-		{
-			return true;
-		}
-		else if (month == t.month)
-		{
-			if (day < t.day)
-			{
-				return true;
-			}
-			else if (day == t.day)
-			{
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
-bool Date::operator==(const Date& t)
-{
-	if (year == t.year && month == t.month && day == t.day)
-		return true;
-	else
-		return false;
-}
-
-bool Date::operator!=(const Date& t)
-{
-	if (year != t.year && month != t.month && day != t.day)
-		return true;
-	else
-		return false;
-}
+//Date& Date::operator+(const Date& a)
+//{
+//	day += a.day;
+//	month += a.month;
+//	year += a.year;
+//	Kogitte(*this);
+//	return *this;
+//}
+//
+//Date& Date::operator-(const Date& a)
+//{
+//	day -= a.day;
+//	month -= a.month;
+//	year -= a.year;
+//	Kogitte(*this);
+//	return *this;
+//}
+//
+//Date& Date::operator+=(int a)
+//{
+//	day += a;
+//	Kogitte(*this);
+//	return *this;
+//}
+//
+//Date& Date::operator-=(int a)
+//{
+//	day -= a;
+//	Kogitte(*this);
+//	return *this;
+//}
+//
+//bool Date::operator>(const Date& t)
+//{
+//	if (year > t.year)
+//	{
+//		return true;
+//	}
+//	else if (year == t.year)
+//	{
+//		if (month > t.month)
+//		{
+//			return true;
+//		}
+//		else if (month == t.month)
+//		{
+//			if (day > t.day)
+//			{
+//				return true;
+//			}
+//		}
+//	}
+//	return false;
+//}
+//
+//bool Date::operator>=(const Date& t)
+//{
+//	if (year > t.year)
+//	{
+//		return true;
+//	}
+//	else if (year == t.year)
+//	{
+//		if (month > t.month)
+//		{
+//			return true;
+//		}
+//		else if (month == t.month)
+//		{
+//			if (day > t.day)
+//			{
+//				return true;
+//			}
+//			else if (day == t.day)
+//			{
+//				return true;
+//			}
+//		}
+//	}
+//	return false;
+//}
+//
+//bool Date::operator<(const Date& t)
+//{
+//	if (year < t.year)
+//	{
+//		return true;
+//	}
+//	else if (year == t.year)
+//	{
+//		if (month < t.month)
+//		{
+//			return true;
+//		}
+//		else if (month == t.month)
+//		{
+//			if (day < t.day)
+//			{
+//				return true;
+//			}
+//		}
+//	}
+//	return false;
+//}
+//
+//bool Date::operator<=(const Date& t)
+//{
+//	if (year < t.year)
+//	{
+//		return true;
+//	}
+//	else if (year == t.year)
+//	{
+//		if (month < t.month)
+//		{
+//			return true;
+//		}
+//		else if (month == t.month)
+//		{
+//			if (day < t.day)
+//			{
+//				return true;
+//			}
+//			else if (day == t.day)
+//			{
+//				return true;
+//			}
+//		}
+//	}
+//	return false;
+//}
+//
+//bool Date::operator==(const Date& t)
+//{
+//	if (year == t.year && month == t.month && day == t.day)
+//		return true;
+//	else
+//		return false;
+//}
+//
+//bool Date::operator!=(const Date& t)
+//{
+//	if (year != t.year && month != t.month && day != t.day)
+//		return true;
+//	else
+//		return false;
+//}

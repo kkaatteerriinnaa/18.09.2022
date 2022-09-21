@@ -13,13 +13,13 @@ public:
     void SetD(int t);
     void SetM(int t);
     void SetY(int t);
-    void GetD();
-    void GetM();
-    void GetY();
+    int GetD()const;
+    int GetM()const;
+    int GetY()const;
     Date operator+(int a);
     Date operator-(int a);
     Date Kogitte(Date&);
-    Date& operator+(const Date& a);
+    /*Date& operator+(const Date& a);
     Date& operator-(const Date& a);
     Date& operator+=(int a);
     Date& operator-=(int a);
@@ -28,6 +28,6 @@ public:
     bool operator<(const Date& t);
     bool operator<=(const Date& t);
     bool operator==(const Date& t);
-    bool operator!=(const Date& t);
+    bool operator!=(const Date& t);*/
 };
 
